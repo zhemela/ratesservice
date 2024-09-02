@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/audit?stringtype=unspecified}
+    username: ${DB_USER:user}
+    password: ${DB_PASS:pass}
+    liquibase:
+      enabled: false
+  cloud:
+    openfeign:
+      client:
+        config:
+          exchangeRateClient:
+            url: ${fixer.api.url}
+            connect-timeout: 5000
+            read-timeout: 5000
+
+fixer:
+  api:
+    url: ${FIXER_API_URL:http://data.fixer.io/api}
+    key: ${FIXER_API_ACCESS_KEY:ef5f65c772f53a8251e6798c4ca310eb}
+    base: EUR
+

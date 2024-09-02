@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-currency-exchange-rate-audit
+      author: your_name
+      changes:
+        - sqlFile:
+            path: classpath:/db/changelog/sql/v1-add-currency-exchange-rate-audit.sql
+            splitStatements: true
+            endDelimiter: ;
